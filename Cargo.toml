@@ -1,0 +1,17 @@
+[package]
+name = "atlas-shader-lab"
+version = "1.0.0"
+edition = "2021"
+description = "Six procedural celestial bodies rendered entirely on the CPU"
+publish = false
+
+[dependencies]
+minifb = "0.26.0"
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.dev]
+opt-level = 2
